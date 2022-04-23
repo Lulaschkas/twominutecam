@@ -1,0 +1,149 @@
+/*Import Bulma */
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+body{
+    font-family: 'Rubik', sans-serif;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url(/src/wallpaper.jpg);
+    min-height: 100vh;
+}
+
+.ytplayer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+#ytplayer{
+    height: calc(76vw / 1.915);
+    width: 95%;
+    box-shadow: 0px 0px 20px grey;
+    border: 0px white;
+    border-radius: 25px;
+}
+@media only screen and (orientation: portrait) {
+    #ytplayer{
+        height: calc(100vw / 1.920);
+        width: 95%;
+        box-shadow: 0px 0px 20px grey;
+        border: 0px white;
+        border-radius: 25px;
+    }
+}
+.footer .button{
+    margin: 0.1rem;
+}
+.titel2{
+    font-size: 2rem;
+
+}
+.countryflag{
+    display: inline;
+    margin-right: 10px;  
+}
+.sidepanel{
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.555);
+    height: 101vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.controls{
+    margin-top:0.5rem;
+    text-align: center;
+    padding:10px;
+    color: white;
+}
+
+
+.infotable{
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgba(240, 248, 255, 0.678) !important;
+
+}
+.worldtable{
+    max-height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(240, 248, 255, 0.678) !important;
+
+}
+.noformat{
+    all: unset;
+    cursor:pointer;
+
+}
+.transition{
+    background: rgb(185,187,0);
+    background: linear-gradient(63deg, rgba(184, 187, 0, 0.805) 0%, rgb(0, 221, 255) 100%); 
+    height:110vh;
+    position:fixed;
+    width: 100vw;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: start;
+    clip-path: circle(25%);
+    transition: clip-path 0.5s;}
+.transition.on{
+    clip-path: circle(75%);
+}
+.transition.off{
+    clip-path: circle(0%);
+}
+
+#earth{
+    position:absolute;
+    height: 10rem;
+    animation-name: "erde";
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+}
+@keyframes erde {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+}
+
+#plane{
+    position:absolute;
+    height: 10rem;
+    z-index: 4;
+    animation-name: plane;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease;
+    margin-bottom: 0rem;
+    transform: rotate(0deg);
+    margin-left: 5rem;
+}
+
+@keyframes plane {
+    0%{}
+    50%{margin-left: -10rem; transform:rotate(10deg);}
+    100%{}
+
+}
+.animationtext{
+    margin-top: 20rem;
+}
+
+.privacy{
+    position: absolute;
+    margin:2rem;
+    padding: 1rem;
+    max-height: 90vh;
+    overflow: auto;
+}

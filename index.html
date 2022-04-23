@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Meta data-->
+        <meta name="title" content="TwoMinuteCam">
+        <meta name="description" content="An easy to use website for browsing webcams around the world.">
+        <meta name="keywords" content="live webcams, world webcam, webcams, twominutecam, two minutes webcam">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        
+        <!--open graph meta tags-->
+        <meta property="og:title" content="TwoMinuteCam">
+        <meta property="og:description" content="An easy to use website for browsing webcams around the world.">
+        <meta property="og:image" content="src/banner.png">
+
+        <title>TwoMinuteCam</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+        <!--Main css file-->
+        <link type="text/css" rel="stylesheet" href="css/main.css">
+        <!--vue.js-->
+        <script src="https://unpkg.com/vue@3.2.33/dist/vue.global.prod.js"></script>
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">         
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+        <!--World map-->
+        <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.7.1/dist/svgMap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.7.1/dist/svgMap.min.css" rel="stylesheet">
+        <!--YouTube ifrmae api-->
+        <script src="https://www.youtube.com/iframe_api"></script>
+    </head>
+    <body>
+        <div class="maincontent" id="maincontent">
+            <div :class="transition">
+                <img id="plane" src="src/airplane.png">
+                <img id="earth" src="src/globe.png">
+                <div class="animationtext">
+                    <p class="title">loading...</p>
+                    <p class="subtitle">Flying to {{ webcamnamenow }}</p>
+                </div>
+            </div>
+            <div class="columns has-text-centered">
+                <div class="sidepanel  column is-3">
+                    <p class="titel2">TwoMinuteCam</p>
+                    <div class="columns is-mobile controls has-text-centered">
+                        <div class="column">
+                            <button @click="buttonprev()" class="noformat">
+                                    <i class="fas fa-arrow-circle-left fa-3x"></i>
+                            </button>
+                        </div>
+                        <div class="column">
+                            <button @click="stoptimer" class="noformat">
+                                <i :class="playbutton"></i>
+                            </button>
+                        </div>
+                        <div class="column">
+                            <button @click="buttonnext();" class="noformat"><i class="fas fa-arrow-circle-right fa-3x"></i></button>
+                        </div>
+
+                    </div>
+                    <progress class="progress is-large leftsec" :value="progress" max="100"></progress>
+                    <table class="table infotable">
+                        <tr>
+                            <td>Current</td>
+                            <td>{{webcamnamenow}}</td>
+                        </tr>
+                        <tr>
+                            <td>Next</td>
+                            <td>{{webcamnamenext}}</td>
+                        </tr>
+                    </table>
+                    <div id="svgMap"></div>
+                    <input v-model="search" @keyup.enter="searchfunc" :class="searchform" type="text" placeholder="Countrycode / Countryname">
+                    <div class="worldtable">
+                        <table class="table is-striped is-fullwidth">
+                            <tr v-for="item in camarrayfiltered">
+                                <td><a @click="filtervideo(item.country)"><img class="countryflag image is-32x32" :src="getcountryimgurl(item.country)"></a> </td>
+                                <td>{{ item.name }} </td>
+                                <td><button @click="nextvideo(Object.keys(this.videoobj).indexOf(item.url))" class="button is-primary is-round">GO</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <button @click="resetfilter()"class="button is-primary is-rounded">Reset filter</button>
+                </div>
+                <div class="fsbutton">
+                    
+                </div>
+                <p></p>
+                <div class="column ytplayer">
+                    <div id="ytplayer">Please wait...</div>                
+                </div>
+            </div>
+            <div class="footer has-text-centered">
+                <p class="subtitle">
+                    TwoMinuteCam
+                </p>
+                <img src="src/logo.png" style="max-height: 10rem">
+                <p>
+                    <a href="https://github.com/Lulaschkas/twominutecam/issues">
+                        <button class="button is-link is-outlined">
+                            Report broken cam &nbsp;
+                            <i class="fas fa-exclamation"></i>
+                        </button>
+                    </a> &nbsp; 
+                    <a href="https://github.com/Lulaschkas/twominutecam/pulls">
+                        <button class="button is-link is-outlined">
+                            Add webcam &nbsp;
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </a> &nbsp; 
+                    <a href="privacy.html">
+                        <button class="button is-link is-outlined">
+                            Privacy policy &nbsp;
+                            <i class="fas fa-lock"></i>
+                        </button>
+                    </a> &nbsp; 
+                    <a href="legal.html">
+                        <button class="button is-link is-outlined">
+                            Terms & conditions &nbsp;
+                            <i class="fas fa-gavel"></i>
+                        </button>
+                    </a> &nbsp; 
+                    <a href="https://github.com/Lulaschkas/twominutecam">
+                        <button class="button is-link is-outlined">
+                            GitHub &nbsp;
+                            <i class="fab fa-github"></i> 
+                        </button>
+                    </a>
+                </p>
+                <br>
+                <p>All webcams are the property of their respective uploaders. The embedding of YouTube videos, as performed by this site, may be disabled by the owners.</p>
+            </div>
+        </div>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/countrycodes.js" type="text/javascript"></script>
+    
+    </body>
+</html>
