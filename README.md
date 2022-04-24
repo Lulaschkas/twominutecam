@@ -1,4 +1,4 @@
-# TwoMinuteCam
+# [TwoMinuteCam](https://lulaschkas.github.io/twominutecam/)
 
 ![GitHub followers](https://img.shields.io/github/followers/Lulaschkas?style=flat) ![GitHub Repo stars](https://img.shields.io/github/stars/Lulaschkas/twominutecam?style=flat) ![Creator](https://img.shields.io/badge/Creator-Lulaschkas-blue?style=flat)
 
