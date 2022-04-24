@@ -31,7 +31,7 @@ const app = Vue.createApp({
         }
     },
     created(){
-        fetch("/webcams.json")
+        fetch("https://lulaschkas.github.io/twominutecam/webcams.json")
         .then(response => response.json())
         .then((api)=>{                  
             this.videoobj=api;
