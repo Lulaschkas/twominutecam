@@ -24,11 +24,6 @@
         "country" :"US",
         "date-added": "03-04-2022"
     },
-    "https://www.youtube.com/watch?v=QIqE1vJ-74I":{
-        "name": "di Carosello Ski",
-        "country" :"IT",
-        "date-added": "03-04-2022"
-    },
     "https://www.youtube.com/watch?v=LXWVYoBluT4":{
         "name": "Soggy Dollar Bar - Jost Van Dyke",
         "country" :"VG",
@@ -44,9 +39,59 @@
         "country" :"US",
         "date-added": "03-04-2022"
     },
-    "https://www.youtube.com/watch?v=zpPOa-XrY-I":{
-        "name": " Duval Street, Key West, Florida",
+    "https://www.youtube.com/watch?v=1EiC9bvVGnk":{
+        "name": "Jackson Hole Wyoming",
         "country" :"US",
-        "date-added": "15-04-2022"
+        "date-added": "03-04-2022"
+    },
+    "https://www.youtube.com/watch?v=5ZW6zDUCvDA":{
+        "name": "HOOFDSTRAAT - EPE",
+        "country": "NL",
+        "date-added": "29-03-2022"
+    },
+    "https://www.youtube.com/watch?v=ZCiK4_BMzxk":{
+        "name": "Fisherman's Village | Koh Samui",
+        "country" :"TH",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=cmkAbDUEoyA":{
+        "name": "Hollywood  Beach, Florida",
+        "country" :"US",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=c4kpeZHcke8":{
+        "name": "Skarsvåg, North Cape",
+        "country" :"NO",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=VIwzSSGbxZw":{
+        "name": "Ashland Railway Virginia",
+        "country" :"US",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=84dLnpdqC_U":{
+        "name": "Long Beach Lodge Tofino",
+        "country" :"CA",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=LwihxyJ4V20":{
+        "name": "Zero Point Levi Ski",
+        "country" :"FI",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=yMSc-qqW3To":{
+        "name": "Geirangerfjord cruise port",
+        "country" :"NO",
+        "date-added": "29-04-2022"
+    }, 
+    "https://www.youtube.com/watch?v=caEt08RwQ2c":{
+        "name": "Jakubowice",
+        "country": "PL",
+        "date-added": "29-04-2022"
+    },
+    "https://www.youtube.com/watch?v=yDKJMdZTEXQ":{
+        "name": "Verbier, place centrale",
+        "country": "CH",
+        "date-added":"29-04-2022"
     }
 }
